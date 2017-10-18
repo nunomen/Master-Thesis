@@ -1,0 +1,152 @@
+%TEX root = ../dissertation.tex
+
+\chapter{Proposed Methodology}
+
+Now, it will be examined the proposed methodology to solve the planning problem
+under uncertainty for mobile robot agents that operate with symbiotic
+relationships. Despite having the following strategy to solve this problem,
+further study must be conducted in order to check the feasibility of this
+approach. This chapter is structured as follows: it starts by a description of
+the chosen planning language, alongside a brief discussion of the reasons to
+cast it as the preferred one. Afterwards, it is explained the core mechanism of
+the planner, explaining the fundamental procedure it uses to infer what
+decisions should be made with the intention to provide the maximum expected
+utility. The methodology is then summarized by discussing its possible
+advantages and disadvantages.
+
+\section{Planning Language}
+
+After a long discussion on planning languages, it seems that choosing the
+language that is more recent, broadly adopted by the researchers in this area
+and even more important, with the ability to describe more expressive domains,
+stands as the right choice to be made, even if the planner can not
+handle some of the expressiveness modeled by the planning language.
+With this in mind, the domains that the planner will solve should be described
+in \textit{RDDL}, and possibly translated to a scheme that the solver can handle.
+But, as the \textit{RDDL} semantic representation is a \textit{DBN}, it should
+not be hard to parse data from the planning language to the effective data
+structures used by the solver.
+
+\section{Solver}
+
+After diving into the state of the art methods for probabilistic planning, it is
+now proposed the usage of Decision-Theoretic Probabilistic Prolog
+\cite{Broeck2010} (\textit{DTProbLog}) to solve planning problems that have
+uncertainty in their domains and multiple decisions can be made.
+\textit{DTProbLog} can be seen as a decision-theoretic extension of
+\textit{ProbLog}, introducing decision-making and respective utilities for
+performing some action. It has multiple inference methods (approximate and exact
+procedures) for computing the optimal strategy for a decision problem.
+
+Concerning now the syntax and semantics of this logical programming language,
+it includes every concept that \textit{ProbLog} had, but it can now also have
+decision facts and utility attributes. This is essential for solving relational
+decision problems. To enumerate decision variables, each possible decision must
+be written as " $? :: d.$ ", where the question mark is used to indicate that
+$d$ is a possible decision to be made. Under these circumstances, each decision
+will have a probability associated, where here it can only be zero (not take
+that decision) or one (make that decision), simplifying this problem into a
+typical \textit{ProbLog} program. Utilities can be introduced by assigning each
+literal $u_i$, a reward, $r_i$, of the set $U$ and can be expressed in a program
+with " $utility(u_i, r_i). $ ". This can be understood as: when $u_i$ is true,
+it gives a reward $r_i$, but only giving it once, not mattering how many equal
+substitutions it does.
+
+By having a \textit{ProbLog} theory $T$, the total expected utility is given by:
+
+\begin{equation}
+    Util(T) = \displaystyle\sum_{(u_i \to r_i) \in U} r_iP(u_i|T)
+\end{equation}
+
+Where $P(u_i|T)$ is given by equation \ref{eq:query_success}. As a result of
+this, the total expected utility for a strategy $\sigma$ is then defined as the
+sum of the expected utilities for each decision of $\sigma$.
+
+The mechanism from which \textit{DTProbLog} makes inference is started by first
+joining all the probabilistic facts and decisions found for a query, using
+SLD-resolution, into a DNF formula. Then, it is used a \textit{BDD} to represent
+that same formula, which is then converted to a similar structure (by using an
+exact procedure), an \textit{Algebraic Decision Diagram} (\textit{ADD}), where
+all the internal nodes are decision nodes and the leaf nodes have the
+probability of success of a query. The optimal strategy will then be obtained by
+following a path from the leaf with the highest value to the root. The algorithm
+for finding the \textit{ADD} can be optimized by prunning, decreasing the time
+needed to compute the optimal solution. Another different procedure is local
+search, using a greedy hill climbing algorithm to find the locally optimal
+strategy. The final optimization technique is called the k-best approximation,
+including only the $k$ proofs from which the product of the random variables
+yield the highest value.
+
+While everything sounds good conceptually, the real catch here is that this
+programming language was designed to solve relational decision problems, so the
+real challenge is to adapt it in a way that is efficient enough to handle
+sequential decision problems and \textit{FOMDP}s.
+
+A simple example should be seen for reference in appendix \ref{code:dtproblog}.
+
+\section{Expected Results}
+
+There has been efforts to test both the planning language and the solver, just
+to familiarize with both the tools that will be used during the period of
+research. These tests were conducted in the \textit{tutorials} section of
+\textit{DTProbLog} website, where multiple examples were carefully analyzed. The
+same happened for the planning language, having investigated multiple domains
+and their respective problem instances which were used in the previous editions
+of \textit{IPC}s.
+The solver of \textit{DTProbLog} that would be used is the one that uses local
+search coupled with k-best optimization, as problems with more than 55 nodes can
+take more than hour to find an optimal solution. From the results of
+\cite{Broeck2010} with \textit{viral marketing}, an example problem with
+70 nodes with $k$ around 20, a solution is expected to be within two
+percent of the best policy that was found in all problem sizes, having a runtime
+of approximately 1 second.
+From what has been studied so far, no further predictions can
+be said about the performance of our solver, as there are many variables that
+can modify its feasibility.
+
+\section{Research Plan Schedule}
+
+The structure of activities to be developed along the following semester and
+beyond is divided in the following sequential blocks:
+\begin{itemize}
+    \item Analyze the research done in the field of First Order Markov Decision
+    Processes that seem very relevant to the present problem that is being
+    discussed.\\
+    \textbf{Proposed conclusion time: } Mid-February.
+    \item Review, test, benchmark and analyze the performance of the state of
+    the art planners that competed in the previous \textit{IPC} from
+    \textit{ICAPS}. \\
+    \textbf{Proposed conclusion time: } Late-March.
+    \item Study of how can we adapt DT-Problog to be a general solver for
+    planning problems and if it can outperform the state of the art planners.\\
+    \textbf{Proposed conclusion time: } Mid-April.
+    \item Model the RDDL planning language in a compatible way to our planner so
+    that it can solve problems of some specified domain.\\
+    \textbf{Proposed conclusion time: } Mid-May.
+    \item Implementation and testing of the planner that was designed in
+    the set of domains and respective problems from the previous \textit{IPC}.
+    This is followed by a discussion of the method implemented.\\
+    \textbf{Proposed conclusion time: } Mid-June.
+    \item Study of how can we model the domain of Symbiotic Autonomy with
+    \textit{MORDOMO} robot, by looking into the research already done by the
+    \textit{CoBot} group from Carnegie Mellon University.\\
+    \textbf{Proposed conclusion time: } Late-June.
+    \item Integrate the solution developed before into the ROS platform and test
+    it with \textit{MORDOMO} robot. Analyze the results obtained when the
+    planner runs along with other blocks of the robot, as it may turn out to be
+    computationally expensive to the system as a whole.\\
+    \textbf{Proposed conclusion time: } Late-June.
+    \item Participate in RoboCup@Home with MORDOMO where several capabilities of
+    the planner will be put into test in different domains and will have to
+    compete against other teams.\\
+    \textbf{Proposed conclusion time: } Late-June to Early-July.
+\end{itemize}
+
+It is important to note that these are only time estimates of the main tasks, it
+may (and it will) occur unexpected delays in any of them, so it was
+estabilished an intern time buffer to cope with some of these problems, but even
+that may be in vain as they could prove to be more complex that looked at first
+sight. Another relevant remark is that it was decided not to model this schedule
+as a GANTT chart as its structure is very rigid and if some delay would happen,
+the chart would be almost worthless, that is why it is described as a list of
+sequential-timed goals which can be easily modified to deal with changes.

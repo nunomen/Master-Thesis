@@ -1,0 +1,22 @@
+available(H) :- \+ working(H).
+
+reachable(O) :- visible(O), grasp_simulation(O).
+
+near(H) :- robot_at_loc(X), located(H,X).
+
+need_help(to_find,O) :- \+ visible(O), want_grasp(O).
+
+need_help(to_grasp,O) :- \+ reachable(O), want_grasp(O), \+ need_help(to_find,O).
+
+ask_help(H,T,O) :- near(H), available(H), need_help(T,O).
+
+robot_at_loc("kitchen").
+working("Robert").
+located("Robert","kitchen").
+located("Melanie","kitchen").
+grasp_simulation("Cup").
+visible("Cup").
+visible("TV").
+want_grasp("TV").
+want_grasp("Car_keys").
+want_grasp("Cup").

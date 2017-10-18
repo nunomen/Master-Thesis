@@ -1,0 +1,5 @@
+(define (domain DOMAIN_NAME)
+  (:requirements [:strips] [:equality] [:typing] [:adl])
+  (:predicates (PREDICATE_1_NAME ?A1 ?A2 ... ?AN)
+               (PREDICATE_2_NAME ?A1 ?A2 ... ?AN)
+	       ...)

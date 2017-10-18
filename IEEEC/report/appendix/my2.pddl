@@ -1,0 +1,6 @@
+(define (problem PROBLEM_NAME)
+  (:domain DOMAIN_NAME)
+  (:objects OBJ_1 ... OBJ_N)
+  (:init ATOM_1  ... ATOM_N)
+  (:goal CONDITION_FORMULA)
+)

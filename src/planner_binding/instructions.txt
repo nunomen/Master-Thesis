@@ -1,0 +1,25 @@
+1) bringup_mbot to turn on the drivers.
+
+2) Turn on Go pro and OBS
+
+3) export ROBOT_ENV=isr-brat on both robot computers
+
+4) roslaunch planner_binding arena_nav.launch on nav computer
+
+5) roslaunch planner_binding arena_hri.launch on hri computer
+
+6) Pose estimate on rviz
+
+7) export ROS_MASTER_URI=http://10.1.15.14:11311/ on terminal of pc
+
+8) launch pycharm on pc
+
+9) rosrun planner_binding monitor.py on pycharm on pc
+
+10) rosrun planner_binding executor.py on pycharm on pc
+
+11) show qr codes
+
+Issues:
+- Robot not moving
+- Face is not showing any led lights

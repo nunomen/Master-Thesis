@@ -1,0 +1,10 @@
+camera_tracker(mbot): sofa
+camera_tracker(robert): bed
+camera_tracker(lynda): kitchen_table
+camera_tracker(melanie): sofa
+camera_tracker(coke): kitchen_table
+holding(coke): none
+recognized(robert): false
+recognized(lynda): false
+recognized(melanie): true
+recognized(coke): false

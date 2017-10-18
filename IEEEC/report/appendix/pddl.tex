@@ -1,0 +1,32 @@
+
+\chapter{PDDL General Syntax}
+
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstinputlisting[
+  label=code:pddl_code_general ,
+  basicstyle=\ttfamily \small,
+  showspaces=false,
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  caption    = {Code in \textit{PDDL} describing the domain physics,
+  using patterns which represent the most common keywords for a given
+  domain.},
+  keywords={
+        define,domain,requirements,types,constants,predicates,action,parameters,precondition,effect
+    },
+]{appendix/my.pddl}
+
+\lstinputlisting[
+  label=code:pddl_problem ,
+  basicstyle=\ttfamily \small,
+  showspaces=false,
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  caption    = {Code in \textit{PDDL} describing the planning problem for a
+  given domain, using patterns which represent the most common keywords
+  for a given problem instance.},
+  keywords={
+        define,domain,problem,types,objects,init,goal
+    },
+]{appendix/my2.pddl}

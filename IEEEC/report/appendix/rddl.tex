@@ -1,0 +1,89 @@
+%!TEX root = ../dissertation.tex
+
+\chapter{RDDL Example}
+
+\definecolor{Brown}{cmyk}{0,0.81,1,0.60}
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.82,0.77,0.13,.4}
+\definecolor{lightlightgray}{gray}{0.9}
+
+\lstset{
+%language=Java,                             % Code langugage
+basicstyle=\ttfamily \small,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{CadetBlue},        % Keywords font ('*' = uppercase)
+commentstyle=\color{OliveGreen},              % Comments font
+numbers=left,                           % Line nums position
+%numberstyle=\tiny,                      % Line-numbers fonts
+%stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+%backgroundcolor=\color{lightlightgray}, % Choose background color
+%frame=none,                             % A frame around the code
+tabsize=4,                              % Default tab size
+%captionpos=b,                           % Caption-position = bottom
+%breaklines=true,                        % Automatic line breaking?
+%breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+showstringspaces=false,
+%columns=flexible,                       % Column format
+morecomment=[l]{//},
+morekeywords={domain, types, bool, int, real, default, state, action, interm, observ, fluent, requirements, reward, deterministic, continuous, multivalued, intermediate, nodes, constrained, partially, observed, concurrent, integer, valued, pvariables, cpfs, cdfs, if, then, else, Bernoulli, Normal, KronDelta, Discrete, reward, instance, init, state, true, false, max, nondef, actions, horizon, discount, objects, non, fluents, constraints}
+}
+
+\begin{lstlisting}[label = code:rddl]
+////////////////////////////////////////////////////////////////////////
+// 				  Home Environment Domain with possible               //
+//                   Symbiotic Relationship example                   //
+////////////////////////////////////////////////////////////////////////
+domain symbiotic_home {
+
+	// The requirements for this domain should be expressed next:
+	requirements = { reward-deterministic };
+
+	// Here, the state and actions fluents are enumerated. This domain
+	// is not exactly the same that was discussed before in the logical
+	// programming language examples.
+
+	pvariables {
+		have_object : { state-fluent,  bool, default = false };
+		reachable : { state-fluent,  bool, default = false };
+		grab : { action-fluent, bool, default = false };
+		ask_grab : { action-fluent, bool, default = false };
+	};
+
+	// Conditional probability functions for the next states.
+	cpfs {
+		have_object = if (~have_object ^ reachable ^ grab) then Bernoulli(0.95)
+					  else if (~have_object ^ ~reachable ^ ask_grab)
+					  then Bernoulli(0.8);
+	};
+
+	// The reward for each state will be given by the following expression.
+	reward = have_object * 10 - grab * 5 - ask_grab * 10;
+	// Since it handles with boolean values only, they will modified to 1 or
+	// 0 depending if they are true of false.
+}
+
+// Here it is defined a problem instance of the domain above
+instance problem_symbiotic_home {
+
+	domain = home_symbiotic;
+	init-state {
+		// As it was stated before in the domain file, the default values
+		// for the states is false so the following lines can be ommited.
+		// have_object = false;
+		// reachable = false;
+	};
+
+	// The agent can not perform more than one action at a time.
+	max-nondef-actions = 1;
+
+	// The agent should plan with a finite horizon accordingly
+	// to the following time steps.
+	horizon  = 6;
+
+	// The discount factor for rewards in each time time step is
+	// described next.
+	discount = 0.85;
+}
+\end{lstlisting}

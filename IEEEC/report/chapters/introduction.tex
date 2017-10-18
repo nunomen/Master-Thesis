@@ -1,0 +1,66 @@
+%!TEX root = ../dissertation.tex
+
+\chapter{Introduction}
+
+
+\section{Motivation}
+
+Mobile robots that assist humans in their domestic tasks can increase the
+quality of life of everyone in this world. While the ultimate goal of
+\textit{AI} is to produce a totally autonomous agent that makes rational
+decisions on its environment and learns from it, making these
+decisions is generally a hard thing to do. Regularly, there is a broad source of
+uncertainty coming from lousy sensors and unexpected action effects which makes
+the problem of decision making very difficult. Not only this can generally
+happen, but oftentimes these robot have several limitations on some of the
+actions they must perform. Several ways to overcome these limitations exist,
+ranging from better sensors and actuators, to agents that seek help from
+other agents to reach their goals. However, if the other agent is a robot, it
+can also have the same limitations, making its help worthless. Consequently, the
+help it gets from the other agents depend on their own nature: if they provide
+some observation data, its reliability must be taken into account; the ability
+to make certain action by other agent is also important, as the execution of
+some action may be severely compromised. Most of these problems can be largely
+minimized by asking help to a nearby available human agent, as the human is
+capable of executing most of the household tasks when the robot is unsure if
+he will be able to perform it. Finally, by formalizing and solving this problem,
+the approach taken can be generalized to solve other kinds of problems where
+there is uncertainty in the world model and rewards for executing some action.
+
+\section{Problem Description}
+
+Considering the multiple tasks the mobile robot must complete in the domestic
+setting, the existing uncertainty in both outcomes of agent's actions and
+observations he receives from the environment, which can be modeled as a
+\textit{Partially Observable Markov Decision Process}, the
+agent should always perform the actions that lead him to the best outcome
+possible. In order to achieve this result, the robot agent should plan in
+advance, taking this uncertainty and possible outcomes into account. However,
+this is not a simple problem to solve, as the \textit{physics} of the this
+domain must be described in some formal way that is expressive enough to detail
+everything that happens within it. Another issue is related to the procedure
+that should be used to solve the planning problem, as the computational
+resources needed to get an optimal plan usually exceeds the duration of the task
+itself. Tipically, this is where the challenge is found:
+
+\textit{"What procedure should the planner have for finding a
+quasi-optimal plan which takes as less time as possible to compute and uses few
+computational resources?}
+
+Hence, finding a planner that obeys the conditions established before is not an
+easy task, and many times one is sacrificed in favor of the other to achieve
+better plans, which could be not advisable in some circumstances.
+
+
+\section{Objectives}
+There is a considerable number of objectives that are expected to be
+accomplished with this thesis, but in short:
+\begin{itemize}
+    \item Study the state of the art planning languages for domains coupled with
+    uncertainty.
+    \item Analyze and Benchmark state of the art planners with varied domains.
+    \item Develop a new planner that uses a different strategy to find the best
+    decision set.
+    \item Benchmark the system made against other teams from the RoboCup@home
+    competition.
+\end{itemize}

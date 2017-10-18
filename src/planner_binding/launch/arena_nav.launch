@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- export ROBOT_ENV=isr-brat -->
+
+    <!-- navigation -->
+    <!-- move_base with dwa approach -->
+    <include file="$(find mbot_2dnav)/ros/launch/2dnav.launch" />
+
+    <!-- move_base action lib wrapper -->
+    <include file="$(find mir_move_base_safe)/ros/launch/move_base.launch" />
+
+    <node pkg="mbot_actions" type="move_base_safe_server_node" name="move_base_safe_server" output="screen" />
+
+</launch>

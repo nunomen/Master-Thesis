@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find freenect_launch)/launch/freenect.launch"/>
+
+    <!-- mouth, eyes emotion interface -->
+    <include file="$(find mbot_facial_expressions)/ros/launch/led_expressions_interface.launch" >
+        <arg name="blink_required" value="true" />
+        <arg name="number_of_blinkings_cycles" value="4" />
+    </include>
+
+    <!-- mbot actions (action lib) : move base safe, perceive, pick, stage, unstage, insert -->
+    <!-- include file="$(find mbot_actions)/ros/launch/run_action_servers.launch" /-->
+
+    <!-- QR CODE LISTENER -->
+    <node name="qrdecoder" pkg="qr_listener" type="qrdecoder.py">
+        <param name="img_topic" value="camera/rgb/image_raw" type="string"/>
+    </node>
+    <!-- END QR CODE LISTENER -->
+
+</launch>

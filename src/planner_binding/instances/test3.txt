@@ -1,0 +1,9 @@
+camera_tracker(mbot): bed
+camera_tracker(robert): bed
+camera_tracker(lynda): kitchen_table
+camera_tracker(melanie): sofa
+recv: (robert,want(robert,coke))
+heard: none
+recognized(robert): true
+recognized(lynda): false
+recognized(melanie): false

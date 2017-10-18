@@ -1,0 +1,99 @@
+# Experiment 1
+
+## observation 1:
+------------------------------------------------------
+status: idle
+camera_tracker(mbot): bed
+camera_tracker(robert): bed
+camera_tracker(lynda): kitchen_table
+camera_tracker(melanie): sofa
+recv: (none, none)
+heard: none
+have_goal: none
+recognized(robert): true
+recognized(lynda): false
+recognized(melanie): false
+
+## observation 2:
+------------------------------------------------------
+status: idle
+camera_tracker(mbot): bed
+camera_tracker(robert): bed
+camera_tracker(lynda): kitchen_table
+camera_tracker(melanie): sofa
+recv: (none, none)
+heard: robert
+have_goal: none
+recognized(robert): true
+recognized(lynda): false
+recognized(melanie): false
+
+## observation 3:
+------------------------------------------------------
+status: conversation(robert)
+camera_tracker(mbot): bed
+camera_tracker(robert): bed
+camera_tracker(lynda): kitchen_table
+camera_tracker(melanie): sofa
+recv: (robert,want(robert,coke))
+heard: none
+have_goal: none
+recognized(robert): true
+recognized(lynda): false
+recognized(melanie): false
+
+## observation 4:
+------------------------------------------------------
+status: idle
+camera_tracker(mbot): bed
+camera_tracker(robert): bed
+camera_tracker(lynda): kitchen_table
+camera_tracker(melanie): sofa
+recv: (none,none)
+heard: none
+have_goal: want(robert,coke)
+recognized(robert): true
+recognized(lynda): false
+recognized(melanie): false
+
+## observation 5:
+------------------------------------------------------
+camera_tracker(coke): bed
+camera_tracker(mbot): bed
+camera_tracker(robert): bed
+camera_tracker(lynda): kitchen_table
+camera_tracker(melanie): sofa
+waiting_for_help: none
+holding(coke): none
+recognized(robert): true
+recognized(lynda): false
+recognized(melanie): false
+recognized(coke): true
+
+## observation 6:
+------------------------------------------------------
+camera_tracker(coke): bed
+camera_tracker(mbot): bed
+camera_tracker(robert): bed
+camera_tracker(lynda): kitchen_table
+camera_tracker(melanie): sofa
+waiting_for_help: none
+holding(coke): mbot
+recognized(robert): true
+recognized(lynda): false
+recognized(melanie): false
+recognized(coke): true
+
+## observation 7:
+------------------------------------------------------
+camera_tracker(coke): bed
+camera_tracker(mbot): bed
+camera_tracker(robert): bed
+camera_tracker(lynda): kitchen_table
+camera_tracker(melanie): sofa
+waiting_for_help: none
+holding(coke): robert
+recognized(robert): true
+recognized(lynda): false
+recognized(melanie): false
+recognized(coke): true

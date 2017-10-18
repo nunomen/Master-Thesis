@@ -1,0 +1,391 @@
+%!TEX root = ../dissertation.tex
+
+\chapter{Appendix}
+\label{appendix:appendix_chapter}
+
+
+\section{1st Test on Wandering Domain}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $sofa$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $kitchen\_table$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $listened_t $  &  $(none, none)$ \\
+     $called_t $  &   $none$ \\
+     $near(robert)_t$   &   $false$ \\
+     $near(lynda)_t$  &   $false$ \\
+     $near(melanie)_t$    &   $false$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $dynamic\_state_t$    &   $ idle $\\
+     $mission_t$    & $ none $ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_mission_states_1}
+    \caption{State of the world in the first step.}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $sofa$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $kitchen\_table$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $listened_t $  &  $(none, none)$ \\
+     $called_t $  &   $robert$ \\
+     $near(robert)_t$   &   $false$ \\
+     $near(lynda)_t$  &   $false$ \\
+     $near(melanie)_t$    &   $false$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $dynamic\_state_t$    &   $ idle $\\
+     $mission_t$    & $ none $ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_mission_states_2}
+    \caption{State of the world in the second step.}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $bed$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $kitchen\_table$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $listened_t $  &  $(none, none)$ \\
+     $called_t $  &   $robert$ \\
+     $near(robert)_t$   &   $true$ \\
+     $near(lynda)_t$  &   $false$ \\
+     $near(melanie)_t$    &   $false$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $dynamic\_state_t$    &   $ idle $\\
+     $mission_t$    & $ none $ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_mission_states_3}
+    \caption{State of the world in the third step.}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $bed$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $kitchen\_table$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $listened_t $  &  $(robert, want(robert, coke))$ \\
+     $called_t $  &   $none$ \\
+     $near(robert)_t$   &   $true$ \\
+     $near(lynda)_t$  &   $false$ \\
+     $near(melanie)_t$    &   $false$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $dynamic\_state_t$    &   $ conversation(robert) $\\
+     $mission_t$    & $ none $ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_mission_states_4}
+    \caption{State of the world in the fourth step.}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $bed$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $kitchen\_table$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $listened_t $  &  $(none, none)$ \\
+     $called_t $  &   $none$ \\
+     $near(robert)_t$   &   $true$ \\
+     $near(lynda)_t$  &   $false$ \\
+     $near(melanie)_t$    &   $false$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $dynamic\_state_t$    &   $ idle $\\
+     $mission_t$    & $ want(robert, coke) $ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_mission_states_5}
+    \caption{State of the world in the fifth step.}
+\end{table}
+
+
+\section{2nd Test on Mission Domain}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $bed$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $kitchen\_table$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $located(coke)_t$  &   $bed$ \\
+     $near(robert)_t$   &   $true$ \\
+     $near(lynda)_t$  &   $false$ \\
+     $near(melanie)_t$    &   $false$ \\
+     $near(coke)_t$  &   $true$ \\
+     $have(coke)_t$ &   $none$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $asked$    &   $(none, none)$ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_grasp_states_1}
+    \caption{State of the world in the first step.}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $bed$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $kitchen\_table$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $located(coke)_t$  &   $bed$ \\
+     $near(robert)_t$   &   $true$ \\
+     $near(lynda)_t$  &   $false$ \\
+     $near(melanie)_t$    &   $false$ \\
+     $near(coke)_t$  &   $true$ \\
+     $have(coke)_t$ &   $mbot$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $asked$    &   $(none, none)$ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_grasp_states_2}
+    \caption{State of the world in the second step.}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $bed$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $kitchen\_table$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $located(coke)_t$  &   $bed$ \\
+     $near(robert)_t$   &   $true$ \\
+     $near(lynda)_t$  &   $false$ \\
+     $near(melanie)_t$    &   $false$ \\
+     $near(coke)_t$  &   $true$ \\
+     $have(coke)_t$ &   $robert$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $asked$    &   $(none, none)$ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_grasp_states_3}
+    \caption{State of the world in the third step.}
+\end{table}
+
+\section{3rd Test on Mission Domain}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $bed$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $kitchen\_table$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $located(coke)_t$  &   $kitchen\_table$ \\
+     $near(robert)_t$   &   $true$ \\
+     $near(lynda)_t$  &   $false$ \\
+     $near(melanie)_t$    &   $false$ \\
+     $near(coke)_t$  &   $false$ \\
+     $have(coke)_t$ &   $none$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $asked$    &   $(none, none)$ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_help_states_1}
+    \caption{State of the world in the first step.}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $kitchen\_table$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $kitchen\_table$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $located(coke)_t$  &   $kitchen\_table$ \\
+     $near(robert)_t$   &   $false$ \\
+     $near(lynda)_t$  &   $true$ \\
+     $near(melanie)_t$    &   $false$ \\
+     $near(coke)_t$  &   $true$ \\
+     $have(coke)_t$ &   $none$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $asked$    &   $(none, none)$ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_help_states_2}
+    \caption{State of the world in the second step.}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $kitchen\_table$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $kitchen\_table$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $located(coke)_t$  &   $kitchen\_table$ \\
+     $near(robert)_t$   &   $false$ \\
+     $near(lynda)_t$  &   $true$ \\
+     $near(melanie)_t$    &   $false$ \\
+     $near(coke)_t$  &   $true$ \\
+     $have(coke)_t$ &   $none$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $asked$    &   $(coke, lynda)$ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_help_states_3}
+    \caption{State of the world in the third step.}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $bed$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $bed$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $located(coke)_t$  &   $bed$ \\
+     $near(robert)_t$   &   $true$ \\
+     $near(lynda)_t$  &   $true$ \\
+     $near(melanie)_t$    &   $false$ \\
+     $near(coke)_t$  &   $true$ \\
+     $have(coke)_t$ &   $lynda$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $asked$    &   $(coke, lynda)$ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_help_states_4}
+    \caption{State of the world in the fourth step.}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $bed$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $bed$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $located(coke)_t$  &   $bed$ \\
+     $near(robert)_t$   &   $true$ \\
+     $near(lynda)_t$  &   $true$ \\
+     $near(melanie)_t$    &   $false$ \\
+     $near(coke)_t$  &   $true$ \\
+     $have(coke)_t$ &   $mbot$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $asked$    &   $(none, none)$ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_help_states_5}
+    \caption{State of the world in the fifth step.}
+\end{table}
+
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{@{}l *3{>{\centering\arraybackslash}X}@{} }
+     \hline
+     \multicolumn{2}{c}{\textbf{External Observations}} \\
+     \hline
+     Predicate & Value \\
+     \hline
+     $located(mbot)_t$   &  $bed$ \\
+     $located(robert)_t$   &  $bed$ \\
+     $located(lynda)_t$   &  $bed$ \\
+     $located(melanie)_t$   &  $sofa$ \\
+     $located(coke)_t$  &   $bed$ \\
+     $near(robert)_t$   &   $true$ \\
+     $near(lynda)_t$  &   $true$ \\
+     $near(melanie)_t$    &   $false$ \\
+     $near(coke)_t$  &   $true$ \\
+     $have(coke)_t$ &   $robert$ \\
+     \hline
+     \multicolumn{2}{c}{\textbf{Internal Observations}} \\
+     \hline
+     $asked$    &   $(none, none)$ \\
+     \hline
+    \end{tabularx}
+    \label{table:test_help_states_6}
+    \caption{State of the world in the sixth step.}
+\end{table}

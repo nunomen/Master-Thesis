@@ -1,0 +1,261 @@
+%!TEX root = ../dissertation.tex
+
+\chapter{Discussion}
+\label{chapter:discussion}
+\section{Analysing reliability of Symbiotic Autonomy on Domestic Environments}
+The introduction of \gls{SA} on the robot's domestic task gives
+alternative action possibities in order to accomplish some specific task on this
+environment.
+This translates into synchronous interactions with human agents. Human's action
+effects have an higher probability of leading to certain outcomes. This appears
+in contrast with the actions of the robot which sometimes lead to different
+states according to a probability function.
+However, this comes with the cost of possibly annoying the person being
+requested for assistance. Not only that but the amount of times it requests help
+to the same person are a reason of concern. These costs are taken into account
+in the description of the domain.
+Though, the relationship is not one sided, even if the robot asks for help,
+the human agent can also request help to get some object on the house.
+Looking into both sides, it is clear that there is a symbiotic interaction
+between the two agents where both benefit from helping each other.
+In short, robotic platforms can be more reliable if they trust some expert to
+execute some action instead.
+
+Another important issue is how natural does the interaction between the human
+and the robot feel. Right now, it feels scripted and too structured in
+comparison with the real world. The reason is that the focus of this thesis was
+on having the whole system properly working, so there is room for improvement on
+human-robot interaction.
+
+\section{Looking into the High Level Architecture}
+When the modeling of the domain began, it turned out that the planner could not
+handle such a large domain. This meant that the planner would take too long to
+solve planning problems.
+To cope with this issue, a method was devised: organizing the domain into an
+hierarchical \gls{MDP}. This way, planning domains are simpler in terms of
+possible actions and states, but the overall purpose of the system is
+maintained.
+This method provided a better response in terms of expected actions the robot
+would take for each encountered situation.
+
+It is important to mention that external observations the robot got were
+simulated by QR codes. This happened because of time constraints of development.
+So an important step now would be to incorporate real world data into the
+system. Also related, the compilation of observations was made based on
+differential information released from the environment. This method was chosen
+instead of discretizing time into a set of steps. The reason was that
+synchronizing every single part of the system would lead to unexpected behaviors
+from the robot.
+
+So there is one question that should be made now: is this system capable of
+performing in real world tasks, and if so, is it scalable?
+Well, if a model of the world was available and the agent could take
+into account all the uncertainty in the world, it would exist a problem related
+to the curse of dimensionality. So it is not possible to perform planning by
+antecipation, So, in that sense, using online planning can deal with that issue.
+The main concern here is that in most cases, a model of the world is not
+available. So there are two alternatives: taking advantage of a human agent to
+find an approximate model of the world or; using reinforcement learning to make
+decisions on this unknown environment while receiving rewards from it, and even
+trying to find the model by experience.
+When using the first method, the human has to study the environment carefully in
+order to identify probabilistic causalities between states, actions and its
+effects. Also, he must engineer a reward function that should model how the agent
+should behave on this environment. The previous method is not scalable as it
+requires an enormous amount of human effort. In practice, if one already knows
+how the agent should behave on an environment, it is often easier to make state
+machines which are real-time and more reliable, with the same effort.
+The second option of using reinforcement learning is more of an end-to-end (and
+specially with the advances of DRL \textbf{reference})
+system that requires less effort of human expertise, since it autonomously
+learns the environment structure. But, a common drawback of these approaches is
+the amount of time necessary to train agents in order to have the optimal policy
+or world model.
+
+\section{Usability of the Dynamic Distributional Clauses}
+It is now possible to characterize the pains and gains of using this type of
+representation to describe \gls{MDP} domains.
+
+\glspl{DDC} have plenty of potential to represent domains with higher degrees
+of complexity. They are able to represent predicates that change along time
+sequences and also variables distributed on a continuous space. Additionally,
+they offer common probability distributions to model these variables. It is also
+possible the usage of static functions for making external calculations that do
+not depend on the \gls{MDP} problem. Equally important is that by taking
+advantage of a programming language, that is \textit{turing complete}, as a way
+to model domains, makes for an higher level of expressivity that it is just not
+possible with other description languages.
+
+Hence, looking into these gains, it would seem like a valid design choice to
+represent \glspl{MDP} with this language, instead of using PPDDL or RDDL, for
+instance. However, when picking \gls{DDC}, one must take into account the
+following drawbacks.
+\begin{itemize}
+    \item One of the major negatives aspects of \gls{DDC} is that it is largely
+    inspired by situation calculus. This leads to the frame problem. For every
+    predicate that remains unchanged after performing some action, a new rule
+    has to be written. This quickly increases the amount of code written as the
+    number of possible predicates and actions gets higher. As consequence,
+    a lot of errors on the description of domains appear. Coupled with the high
+    amount of rules written, it is really hard to track the origin of these errors,
+    and the absence of debugging tools does not help as well.
+
+    \item The implementation of this language was made on top of prolog. In fact,
+    there are so many different implementations of prolog that in 1995 was
+    published a standard to uniformize the structure of the language.
+    Implementations that follow this standard are ISO/IEC 13211-1 compliant. As
+    a result, the prolog programming community is largely fractured and
+    declining over time.
+    When some error occurs, it is generally hard to find a solution, as the
+    problem could be related to a specific prolog implementation. \glspl{DDC} is
+    built with \textit{YAP prolog}, a rather popular version.
+    It is frustratingly common to have core dumps on execution of a program,
+    making this language (in its current state) not proper for robotic
+    applications. As rule of thumb, reliable robotic systems should rely on
+    frameworks that have fast responses and easily recover from failures or
+    unexpected events.
+
+    \item This is not much of a drawback itself, but more of a discussion on
+    why one should choose to describe planning domains with \glspl{DDC} instead
+    of \gls{PPDDL} or \gls{RDDL}. Originally, the formers came up in order to
+    standardize planning domains, so researchers could focus on finding better
+    planning algorithms, while having a common platform to benchmark them. On
+    the other side, \gls{DDC} is capable of describing domains in ways the
+    others are not.
+    It is the reader's job to interpret what is most important for their own
+    planning research.
+
+    \item In particular to this implementation, there is a lot of clutter code
+    that needs to be included in a program in order to run prolog programs. An
+    end user of \gls{DDC} should not have to worry about this type of details.
+    So, as it stands, the programming interface is not really user-friendly.
+
+    \item Finally, to end this section, it is hard to find proper documentation
+    about the correct usage of \gls{DDC}. So, one most resort to: reading
+    research articles which are great for understanding the theory behind them,
+    but lackluster for implementations details; understanding the small amount
+    of examples provided; diving into the implementation to find which
+    probability distributions are available, for instance.
+
+\end{itemize}
+
+\section{Is \gls{HYPE} a good choice for solving real-time planning
+problems?}
+Withstanding the time constraints imposed by robotic's problems, \gls{HYPE}
+planner provides a lot of flexibility by being able to dynamically introduce new
+predicates into planning problems as the domain changes. This includes new
+people or objects on the domain, for example. It performs decisions
+based on the current available information if the problem mantains the same
+knowledge base and structure.
+This feature is possible because it only finds a policy for the current
+state, and not for all the existent state space, since it is an online planner.
+One should not confuse online planning with real-time planning. The term online
+means that planning is performed on the moment it receives information from
+the environment.
+This appears in contrast with the majority of other planners which normally
+calculate the optimal policy for all possible state space, and that function
+is used on execution time, choosing the correct state-action mapping, if the
+policy is deterministic. This procedure is often called offline planning.
+Regardless, \gls{HYPE} planner is not real-time since it does not guarantee a
+response within an acceptable temporal window or deadline.
+
+Nevertheless, there are guarantees that given an infinite amount of time and the
+current state information, an optimal action is found. But, this is not good
+enough for robotics. An action solution should always be found on an acceptable
+task time. So, on its current state, \gls{HYPE} is not an appropriate planner
+to deal with these type of problems, given its time constraints. Other planners
+should be considered when dealing with robotics domains that include some
+uncertainty on its domain, as \textit{PROST}\footnote{\textit{PROST}, \textit{
+Keller and Geisser}, is the
+winning planner from 2011/2014 ICAPS' International Planning Competitions, on
+the MDP boolean track.} or \textit{POMDPX\_NUS}\footnote{\textit{POMDPX\_NUS},
+\textit{Ye, Wu, Zhang, Hsu, and Lee}, won the 2014 ICAPS' International Planning
+Competition, on the POMDP boolean track.} for instance.
+
+Another important topic is the high amount of parameter tuning necessary to find
+the best action-value function. This happens because \gls{HYPE} has a lot of
+hyperparameters, transforming the problem of planning into an
+optimization problem of finding the best parameter set for every specific
+planning problem. The high variance of the results also do not help on the task
+of finding them.
+
+It is not possible to define rewards as the sum of multiple state factors. So,
+it is necessary to discriminate the reward for a complete world. This fact could
+easily lead to errors. Also, if there is world which can unify with multiple
+rewards, it will only be considered the first that appears on the text file. The
+solution for this problem was to exclusively use actions and goal states as
+possible reward sources.
+
+Finally, other shortcoming of \gls{HYPE} is that it can not model multi-agent
+domains. So, in order to model human agents in the domestic environment, it was
+assumed they had a static and known stochastic policy.
+
+\chapter{Conclusion}
+
+On this work, it was proposed a framework for domestic robots using probabilistic
+logic programming with dynamic distributional clauses for solving \glspl{MDP}
+as one time decision problems. The robot uses these tools in order to decide
+which action to take at each time step while trying to maximize its expected
+reward on the domestic environment.
+
+It is proposed an hierarchical \gls{MDP} domain divided into two: one where 
+the robot is wandering in the environment waiting for
+some request of assistance, and all actions are executed by this agent; and
+another where the robot has to complete some mission assigned from the first
+domain. This last domain provides the robot the chance to ask for assistance to
+another human in order to perform some action he had low probability of
+successfully carrying out.
+
+The set of state predicates, applicable actions, rewards and rules of the domain
+are described in terms of dynamic distributional clauses. A problem is generated
+from these rules by grounding the observation set, given proprioceptive and
+exteroceptive information.
+
+Finally, \gls{HYPE} solver is called to solve this one time decision problem,
+giving as result the action with the highest state-action value, from the
+sampling procedure, along with the reward from executing that action.
+The robot parses the information from the program and executes the corresponding
+action on the real world while waiting to observe new information from it.
+This cycle continues until the goal of planning problem is reached, switching
+back again to the first domain where the robot is wandering around, looking for
+missions from human agents.
+
+\chapter{Future Work}
+This thesis contributed to research in Symbiotic Autonomy between robots and 
+humans in domestic environments while using a probabilistic programming language.
+However, if one wants to follow this line of research, it is really important to 
+have fully working modules on the robot's own pool of hardware and software. Since, 
+the developed work only made use of the robot's speech and movement, it would be 
+interesting to replace the simulated actions of grasping and delivering objects 
+with a real robotic manipulator that would react accordingly with the appropriate 
+situation.
+Another important feature would be to incorporate real perception modules which 
+can generate the expected observation data. It should include the following:
+\begin{itemize}
+    \item \textbf{Speech Recognition:} responsible for the conversational 
+part of the task, exactly when the agent receives the mission assignment.
+    \item \textbf{Agent's Location Tracker:} in order to know each agent's 
+    location in real time.
+    \item \textbf{Person Recognition:} it is needed to identify each person in the 
+    robot's knowledge base. It can also be useful to introduce new people into the
+    domain's problem. Finally, it can be used to check if the robot is near to other
+    agent.
+\end{itemize}
+All these improvements would make the benchmark much more realistic compared to a real 
+domestic environment.
+
+Talking now about one of the obvious shortcomings of the present software architecture, 
+which is the time it takes to plan in any given situation. It would be an interesting 
+research opportunity to integrate a state of the art planner into the developed module and 
+compare its performance on a similar domain. I would propose PROST \cite{keller2012prost}, 
+given its records on past \glspl{ICAPS-IPC}.
+
+Another important shortcoming of the current architecture is the planner's incompatibility
+for modeling domains with multiple inteligent agents. In a real domestic environment, every 
+agent is taking individual asynchronous decisions. A proposal for a research path would be to
+develop a new planner with similar characteristics to \gls{HYPE} (i.e. using a similar programming
+language, and including \glspl{DDC}), but with asynchronous multi-agent decision making support for
+\glspl{MDP}.
+
+
+

@@ -1,0 +1,432 @@
+@article{DeRaedt2007,
+abstract = {We introduce ProbLog, a probabilistic extension of$\backslash$r$\backslash$nProlog. A ProbLog program defines a distribution$\backslash$r$\backslash$nover logic programs by specifying for each clause$\backslash$r$\backslash$nthe probability that it belongs to a randomly sampled$\backslash$r$\backslash$nprogram, and these probabilities are mutually$\backslash$r$\backslash$nindependent. The semantics of ProbLog is then defined$\backslash$r$\backslash$nby the success probability of a query, which$\backslash$r$\backslash$ncorresponds to the probability that the query succeeds$\backslash$r$\backslash$nin a randomly sampled program. The key$\backslash$r$\backslash$ncontribution of this paper is the introduction of an$\backslash$r$\backslash$neffective solver for computing success probabilities.$\backslash$r$\backslash$nIt essentially combines SLD-resolution with$\backslash$r$\backslash$nmethods for computing the probability of Boolean$\backslash$r$\backslash$nformulae. Our implementation further employs$\backslash$r$\backslash$nan approximation algorithm that combines iterative$\backslash$r$\backslash$ndeepening with binary decision diagrams. We report$\backslash$r$\backslash$non experiments in the context of discovering$\backslash$r$\backslash$nlinks in real biological networks, a demonstration$\backslash$r$\backslash$nof the practical usefulness of the approach.},
+author = {{De Raedt}, Luc and Kimmig, Angelika and Toivonen, Hannu},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/IJCAI07-397.pdf:pdf},
+issn = {10450823},
+journal = {IJCAI International Joint Conference on Artificial Intelligence},
+keywords = {inductive logic programming,intelligent databases,probabilistic reasoning,theorem proving},
+pages = {2468--2473},
+title = {{ProbLog: A probabilistic prolog and its application in link discovery}},
+year = {2007}
+},
+
+@article{Chaslot2008,
+abstract = {Classic approaches to game AI require either a high quality of domain knowledge, or a long time to generate effective AI behaviour. These two characteristics hamper the goal of establishing challenging game AI. In this paper, we put forward Monte-Carlo Tree Search as a novel, uniﬁed framework to game AI. In the framework, randomized explorations of the search space are used to predict the most promising game actions. We will demonstrate that Monte-Carlo Tree Search can be applied effectively to (1) classic board-games, (2) modern board-games, and (3) video games.},
+author = {Chaslot, Guillaume and Bakkes, Sander and Szita, Istvan and Spronck, Pieter},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/AIIDE08-036.pdf:pdf},
+isbn = {9781577353911},
+journal = {Aiide},
+keywords = {demonstration papers},
+mendeley-groups = {Planning},
+pages = {216--217},
+title = {{Monte-Carlo Tree Search: A New Framework for Game AI.}},
+url = {http://www.aaai.org/Papers/AIIDE/2008/AIIDE08-036.pdf},
+year = {2008}
+}
+
+@article{Somani2013,
+author = {Somani, A and Ye, Nan and Hsu, D and Lee, Ws},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/somani2013despot.pdf:pdf},
+issn = {10495258},
+journal = {Advances in Neural Information Processing Systems},
+mendeley-groups = {Planning},
+pages = {1--9},
+title = {{DESPOT : Online POMDP Planning with Regularization}},
+url = {http://papers.nips.cc/paper/5189-despot-online-pomdp-planning-with-regularization},
+year = {2013}
+}
+
+
+
+@article{Yoon2007,
+abstract = {FF-Replan was the winner of the 2004 International Probabilistic Planning Competition (IPPC-04) (Younes {\&} Littman 2004a) and was also the top performer on IPPC-06 domains, though it was not an official entry. This success was quite surprising, due to the simplicity of the approach. In particular, FF-Replan calls FF on a carefully constructed deterministic variant of the planning problem and selects actions according to the plan until observing an unexpected effect, upon which it replans. Despite the obvious shortcomings of the approach and its strawman nature, it is the state-of-the-art in probabilistic planning as measured on recent competition benchmarks. This paper gives the first technical description of FF-Replan and provides an analysis of its results on all of the recent IPPC-04 and IPPC-06 domains. We hope that this will inspire extensions and insight into the approach and planning domains themselves that will soon lead to the dethroning of FF-Replan. Copyright © 2007, Association for the Advancement of Artificial Intelligence (www.aaai.org). All rights reserved.},
+author = {Yoon, Sungwook and Fern, Alan and Givan, Robert},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/ICAPS07-045.pdf:pdf},
+isbn = {9781577353447 (ISBN)},
+journal = {Proceedings of the 17th International Conference on Automated Planning and Scheduling (ICAPS)},
+keywords = {Base-lines,Competition,Do-mains,Planning domains,Planning problems,Probabilistic planning,Probability,Scheduling,Short-comings},
+mendeley-groups = {Solvers},
+number = {Geffner 1998},
+pages = {352--359},
+title = {{FF-Replan: A baseline for probabilistic planning}},
+url = {http://www.scopus.com/inward/record.url?eid=2-s2.0-58349118462{\&}partnerID=40{\&}md5=8abd5307b4dee9aa40248bbe6c51d389},
+year = {2007}
+}
+
+@article{Keller2012,
+author = {Keller, Thomas and Eyerich, Patrick},
+file = {:C$\backslash$:/Users/Nuno Mendes/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Keller, Eyerich - 2012 - PROST Probabilistic Planning Based on UCT.pdf:pdf},
+isbn = {9781577355625},
+journal = {Icaps},
+mendeley-groups = {Solvers/competition},
+title = {{PROST: Probabilistic Planning Based on UCT.}},
+url = {http://www.aaai.org/ocs/index.php/ICAPS/ICAPS12/paper/viewPDFInterstitial/4715/4721},
+year = {2012}
+}
+
+@article{Keller2013,
+abstract = {Dynamic programming is a well-known approach for solv- ing MDPs. In large state spaces, asynchronous versions like Real-Time Dynamic Programming have been applied suc- cessfully. If unfolded into equivalent trees, Monte-Carlo Tree Search algorithms are a valid alternative. UCT, the most pop- ular representative, obtains good anytime behavior by guiding the search towards promising areas of the search tree. The Heuristic Search algorithm AO∗ finds optimal solutions for MDPs that can be represented as acyclic AND/OR graphs. We introduce a common framework, Trial-based Heuristic Tree Search, that subsumes these approaches and distin- guishes them based on five ingredients: heuristic function, backup function, action selection, outcome selection, and trial length. Using this framework, we describe three new algorithms which mix these ingredients in novel ways in an attempt to combine their different strengths. Our evaluation shows that two of our algorithms not only provide superior theoretical properties to UCT, but also outperform state-of- the-art approaches experimentally. Introduction},
+author = {Keller, Thomas and Helmert, Malte},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/keller-helmert-icaps2013.pdf:pdf},
+isbn = {9781577356097},
+journal = {Proc. Int. Conf. Automat. Plan. Sched.},
+mendeley-groups = {Solvers/competition},
+pages = {135--143},
+title = {{Trial-based Heuristic Tree Search for Finite Horizon MDPs}},
+year = {2013}
+}
+
+
+@article{Vallati2015,
+author = {Vallati, Mauro and Chrpa, Luk{\'{a}}{\v{s}} and Grzes, Marek and McCluskey, T.L. and Roberts, Mark and Sanner, Scott},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/aimag15{\_}ipc.pdf:pdf},
+journal = {AI Magazine},
+keywords = {Q Science (General),QA Mathematics,QA76 Computer software},
+mendeley-groups = {Competitions},
+title = {{The 2014 International Planning Competition: Progress and Trends}},
+url = {http://eprints.hud.ac.uk/25422/1/VallatietAl.pdf},
+year = {2015}
+}
+
+@article{Coles2012,
+abstract = {In this article we review the 2011 Interna- tional Planning Competition. We give an overview of the history of the competition, dis- cussing how it has developed since its first edi- tion in 1998. The 2011 competition was run in three main separate tracks: the deterministic (classical) track; the learning track; and the uncertainty track. Each track proposed its own distinct set of new challenges and the partici- pants rose to these admirably, the results of each track showing promising progress in each area. The competition attracted a record num- ber of participants this year, showing its con- tinued and strong position as a major central pillar of the international planning research community.},
+author = {Coles, Amanda and Coles, Andrew and Garc{\'{\i}}a-Olaya, {\'{A}}ngel and Jim{\'{e}}nez, Sergio and {Linares L{\'{o}}pez}, Carlos and Sanner, Scott and Yoon, Sungwook},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/aim2011.pdf:pdf},
+issn = {07384602},
+journal = {AI Magazine},
+mendeley-groups = {Competitions},
+pages = {83--88},
+title = {{A Survey of the Seventh International Planning Competition}},
+url = {http://www.aaai.org/ojs/index.php/aimagazine/article/view/2392},
+volume = {33},
+year = {2012}
+}
+
+
+@article{Rosenthal2010,
+abstract = {Several researchers, present authors included, envision personal mobile robot agents that can assist humans in their daily tasks. Despite many advances in robotics, such mobile robot agents still face many limitations in their perception, cognition, and action capabilities. In this work, we propose a symbiotic interaction between robot agents and humans to overcome the robot limitations while allowing robots to also help humans. We introduce a visitor's companion robot agent, as a natural task for such symbiotic interaction. The visitor lacks knowledge of the environment but can easily open a door or read a door label, while the mobile robot with no arms cannot open a door and may be confused about its exact location, but can plan paths well through the building and can provide useful relevant information to the visitor. We present this visitor companion task in detail with an enumeration and formalization of the actions of the robot agent in its interaction with the human. We briefly describe the wifi-based robot localization algorithm and show results of the different levels of human help to the robot during its navigation. We then test the value of robot help to the visitor during the task to understand the relationship tradeoffs. Our work has been fully implemented in a mobile robot agent, CoBot, which has successfully navigated for several hours and continues to navigate in our indoor environment.},
+author = {Rosenthal, Stephanie and Biswas, J and Veloso, M},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/10aamas-cobot.pdf:pdf},
+isbn = {978-0-9826571-1-9},
+issn = {15582914},
+journal = {Proc. of 9th Int. Conf. on Autonomous Agents and Multiagent Systems (AAMAS 2010)},
+keywords = {agent interaction,human-robot},
+mendeley-groups = {Symbiotic},
+pages = {915--922},
+title = {{An effective personal mobile robot agent through symbiotic human-robot interaction}},
+url = {http://dl.acm.org/citation.cfm?id=1838329},
+year = {2010}
+}
+
+@article{Broeck2010,
+author = {Broeck, Guy Van Den and Thon, Ingo and Otterlo, Martijn Van and Raedt, Luc De},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/1695-8272-1-PB.pdf:pdf},
+isbn = {9781577354659},
+journal = {Aaai},
+keywords = {Technical Papers -- Reasoning Under Uncertainty},
+mendeley-groups = {Solvers,Solvers/Logic},
+number = {Sato},
+pages = {1217--1222},
+title = {{DTProbLog: A Decision-Theoretic Probabilistic Prolog.}},
+url = {http://www.aaai.org/ocs/index.php/AAAI/AAAI10/paper/download/1695/2181},
+year = {2010}
+}
+
+
+@article{Rosenthal2011,
+abstract = {Robots are increasingly autonomous in our environments, but they still must overcome limited sensing, reasoning, and actuating capabilities while completing services for humans. While some work has focused on robots that proactively request help from humans to reduce their limitations, the work often assumes that humans are supervising the robot and always available to help. In this work, we instead investigate the feasibility of asking for help from humans in the environment who benefit from its services. Unlike other human helpers that constantly monitor a robot's progress, humans in the environment are not supervisors and a robot must proactively navigate to them to receive help. We contribute a study that shows that several of our environment occupants are willing to help our robot, but, as expected, they have constraints that limit their availability due to their own work schedules. Interestingly, the study further shows that an available human is not always in close proximity to the robot. We present an extended model that includes the availability of humans in the environment, and demonstrate how a navigation planner can incorporate this information to plan paths that increase the likelihood that a robot can find an available helper when it needs one. Finally, we discuss further opportunities for the robot to adapt and learn from the occupants over time.},
+author = {Rosenthal, S and Veloso, M},
+doi = {10.1007/s10846-011-9610-4},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/Rosenthal{\_}JINT.pdf:pdf},
+issn = {0921-0296, 1573-0409},
+journal = {Journal of Intelligent and Robotic Systems},
+keywords = {human-robot interaction,planning},
+mendeley-groups = {Symbiotic},
+pages = {205----221},
+title = {{Is Someone in this Office Available to Help Me?}},
+url = {http://www.springerlink.com/index/F0583275683Q8602.pdf},
+volume = {66},
+year = {2011}
+}
+
+@article{Younes2004,
+abstract = {We desribe a variation of the planning domain definition language,$\backslash$nPDDL, that permits the modeling of$\backslash$n$\backslash$nprobabilistic planning problems with rewards. This language, PPDDL1.0,$\backslash$nwas used as the input language$\backslash$n$\backslash$nfor the probabilistic track of the 4th International Planning Competition.$\backslash$nWe provide the complete syntax for$\backslash$n$\backslash$nPPDDL1.0 and give a semantics of PPDDL1.0 planning problems in terms$\backslash$nof Markov decision processes},
+author = {Younes, Hls and Littman, Ml},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/CMU-CS-04-167.pdf:pdf},
+journal = {{\ldots} . Rep. CMU-CS- {\ldots}},
+keywords = {markov decision processes,pddl,probabilistic planning},
+mendeley-groups = {Languages,Languages/PPDDL},
+title = {{PPDDL1. 0: An extension to PDDL for expressing planning domains with probabilistic effects}},
+url = {http://reports-archive.adm.cs.cmu.edu/anon/anon/home/ftp/usr0/ftp/2004/CMU-CS-04-167.pdf},
+year = {2004}
+},
+
+@phdthesis{sanner_thesis,
+abstract = {We consider the general framework of first-order decision-theoretic planning in structured re- lational environments. Most traditional solution approaches to these planning problems ground the relational specification w.r.t. a specific domain instantiation and apply a solution approach directly to the resulting groundMarkov decision process (MDP). Unfortunately, the space and time complexity of these solution algorithms scale linearlywith the domain size in the best case and exponentially in the worst case. An alternate approach to grounding a relational planning problem is to lift it to a first-order MDP (FOMDP) specification. This FOMDP can then be solved directly, resulting in a domain-independent solution whose space and time complexity either do not scale with domain size or can scale sublinearly in the domain size. However, such generality does not come without its own set of challenges and the first purpose of this the- sis is to explore exact and approximate solution techniques for practically solving FOMDPs. The second purpose of this thesis is to extend the FOMDP specification to succinctly cap- ture factored actions and additive rewards while extending the exact and approximate solution techniques to directly exploit this structure. In addition, we provide a proof of correctness of the first-order symbolic dynamic programming approach w.r.t. its well-studied ground MDP counterpart},
+author = {Sanner, Scott Patrick},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Teses Antigas/Same Area/Sanner{\_}Scott{\_}FOMPD.pdf:pdf},
+mendeley-groups = {Thesis},
+pages = {253},
+title = {{First Order Decision-Theoretic Planning in Structured Relational Environments}},
+year = {2008}
+}
+
+
+@phdthesis{Wang2007,
+author = {Wang, Chenggang},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Teses Antigas/Same Area/Chenggang{\_}FOMDP.pdf:pdf},
+mendeley-groups = {Thesis},
+number = {May},
+pages = {161},
+title = {{First Order Markov Decision Processes}},
+url = {http://scholar.google.com/scholar?hl=en{\&}btnG=Search{\&}q=intitle:First+Order+Markov+Decision+Processes{\#}0},
+year = {2007}
+}
+
+
+@article{Sanner2008,
+author = {Sanner, Scott},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/icaps08{\_}rc.pdf:pdf},
+journal = {Workshop on a Reality Check for Planning and Scheduling Under Uncertainty at ICAPS},
+mendeley-groups = {Languages/RDDL},
+title = {{How to Spice up your Planning under Uncertainty Research Life}},
+year = {2008}
+}
+
+
+@unpublished{Sanner_RDDL,
+     author = "Scott Sanner",
+     title = "Relational Dynamic Influence Diagram Language (RDDL): Language Description",
+     note = "\url{http://users.cecs.anu.edu.au/~ssanner/IPPC_2011/RDDL.pdf}",
+     year = 2010},
+
+@article{Gerevini2005,
+author = {Gerevini, Alfonso E and Long, Derek},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/gerevini-long-tr-2005.pdf:pdf},
+isbn = {RT 2005-08-47},
+journal = {Technical Report},
+mendeley-groups = {Languages,Languages/PDDL},
+pages = {1--12},
+title = {{Plan Constraints and Preferences in PDDL3}},
+year = {2005}
+},
+
+
+@article{Fox2003,
+abstract = {In recent years research in the planning community has moved increasingly toward s application of planners to realistic problems involving both time and many typ es of resources. For example, interest in planning demonstrated by the space res earch community has inspired work in observation scheduling, planetary rover ex ploration and spacecraft control domains. Other temporal and resource-intensive domains including logistics planning, plant control and manufacturing have also helped to focus the community on the modelling and reasoning issues that must be confronted to make planning technology meet the challenges of application. The International Planning Competitions have acted as an important motivating fo rce behind the progress that has been made in planning since 1998. The third com petition (held in 2002) set the planning community the challenge of handling tim e and numeric resources. This necessitated the development of a modelling langua ge capable of expressing temporal and numeric properties of planning domains. In this paper we describe the language, PDDL2.1, that was used in the competition. We describe the syntax of the language, its formal semantics and the validation of concurrent plans. We observe that PDDL2.1 has considerable modelling power --- exceeding the capabilities of current planning technology --- and presents a number of important challenges to the research community.},
+archivePrefix = {arXiv},
+arxivId = {1106.4561},
+author = {Fox, Maria and Long, Derek},
+doi = {10.1613/jair.1129},
+eprint = {1106.4561},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/JAIR-2002.pdf:pdf},
+issn = {10769757},
+journal = {Journal of Artificial Intelligence Research},
+keywords = {Copyright © 2003 AI Access, Changes and compilatio},
+mendeley-groups = {Languages,Languages/PDDL},
+pages = {61--124},
+title = {{PDDL2.1: An extension to PDDL for expressing temporal planning domains}},
+volume = {20},
+year = {2003}
+},
+
+@article{Edelkamp2004,
+author = {Edelkamp, Stefan and Hoffmann, J{\"{o}}rg},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/pddl2.2.pdf:pdf},
+journal = {Syntax},
+mendeley-groups = {Languages,Languages/PDDL},
+number = {195},
+pages = {1--21},
+title = {{PDDL2 . 2 : The Language for the Classical Part of the 4th International Planning Competition 1 Introduction 2 Derived Predicates}},
+year = {2004}
+},
+
+
+@article{Kovacs2011,
+author = {Kovacs, Daniel L.},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/kovacs-pddl-3.1-2011.pdf:pdf},
+journal = {Unpublished manuscript from the IPC-2011 website},
+mendeley-groups = {Languages/PDDL},
+pages = {1--5},
+title = {{BNF definition of PDDL 3.1 (completely corrected)}},
+volume = {1},
+year = {2011}
+}
+
+@article{Andersen1999,
+abstract = {This note is a short introduction to Binary Decision Diagrams. It provides some background knowledge and describes the core algorithms.},
+author = {Andersen, Henrik Reif},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/bdd97.pdf:pdf},
+journal = {Building},
+mendeley-groups = {Utils},
+number = {October 1997},
+pages = {8--15},
+title = {{An Introduction to Binary Decision Diagrams}},
+url = {http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.88.9410{\&}amp;rep=rep1{\&}amp;type=pdf},
+volume = {30},
+year = {1999}
+},
+
+@article{Bacchus2003,
+abstract = {In this commentary I argue that although pddl2.1 is a very useful standard for the planning competition, its design does not properly consider the issue of domain modeling.},
+annote = {Planning domains, even simplified ones designed for research, can be modeled in many different ways, and I believe that it is better to produce more robust models with simpler languages than to develop languages with features that are not really needed.},
+author = {Bacchus, Fahiem},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/bacchus-jair-2003.pdf:pdf},
+journal = {Journal of Artificial Intelligence Research},
+mendeley-groups = {Languages/PDDL},
+pages = {125--132},
+title = {{The Power of Modeling—a Response to pddl2.}},
+url = {http://www.aaai.org/Papers/JAIR/Vol20/JAIR-2003.pdf},
+volume = {20},
+year = {2003}
+}
+
+
+@article{Fikes1971,
+abstract = {We describe a new problem solver called STRIPS that attempts to find a sequence of operators in a space of world models to transform a given initial world model in which a given goal formula can be proven to be true. STRIPS represents a world model as an arbitrary collection in first-order predicate calculus formulas and is designed to work with models consisting of large numbers of formula. It employs a resolution theorem prover to answer questions of particular models and uses means-ends analysis to guide it to the desired goal-satisfying model.},
+author = {Fikes, Richard E. and Nilsson, Nils J.},
+doi = {10.1016/0004-3702(71)90010-5},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/strips.pdf:pdf},
+isbn = {0004-3702},
+issn = {00043702},
+journal = {Artificial Intelligence},
+mendeley-groups = {Languages/strips},
+number = {3-4},
+pages = {189--208},
+title = {{Strips: A new approach to the application of theorem proving to problem solving}},
+volume = {2},
+year = {1971}
+}
+
+@article{McDermott2003,
+author = {McDermott, Drew},
+doi = {10.1613/jair.1996},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/mcdermott-jair-2003.pdf:pdf},
+issn = {10769757},
+journal = {Journal of Artificial Intelligence Research},
+mendeley-groups = {Languages/PDDL},
+pages = {145--148},
+title = {{PDDL2.1 - The art of the possible? Commentary on fox and long}},
+volume = {20},
+year = {2003}
+},
+
+
+
+@article{B2015,
+abstract = {Real-world planning problems frequently involve mixtures of continuous and discrete state variables and actions, and are formulated in environments with an unknown number of objects. In recent years, probabilistic programming has emerged as a natural approach to capture and characterize such complex probability distributions with general-purpose inference methods. While it is known that a probabilistic programming language can be easily extended to represent Markov Decision Processes (MDPs) for planning tasks, solving such tasks is challenging. Building on related efforts in reinforcement learning, we introduce a conceptually simple but powerful planning algorithm for MDPs realized as a probabilistic program. This planner constructs approximations to the optimal policy by importance sampling, while exploiting the knowledge of the MDP model. In our empirical evaluations, we show that this approach has wide applicability on domains ranging from strictly discrete to strictly continuous to hybrid ones, handles intricacies such as unknown objects, and is argued to be competitive given its generality},
+annote = {Muito importante para esta semana.
+RDDL vs Problog},
+author = {B, Davide Nitti and Belle, Vaishak and Raedt, Luc De},
+doi = {10.1007/978-3-319-23525-7},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/978-3-319-23525-7{\_}20.pdf:pdf},
+isbn = {978-3-319-23524-0},
+mendeley-groups = {Planning},
+pages = {327--342},
+title = {{Planning in Discrete and Continuous Markov Decision Processes by Probabilistic Programming}},
+url = {http://link.springer.com/10.1007/978-3-319-23525-7},
+volume = {9285},
+year = {2015}
+},
+
+
+@article{Kimmig2011,
+abstract = {The past few years have seen a surge of interest in the field of probabilistic logic learning and statistical relational learning. In this endeavor, many probabilistic logics have been developed. ProbLog is a recent probabilistic extension of Prolog motivated by the mining of large biological networks. In ProbLog, facts can be labeled with probabilities. These facts are treated as mutually independent random variables that indicate whether these facts belong to a randomly sampled program. Different kinds of queries can be posed to ProbLog programs. We introduce algorithms that allow the efficient execution of these queries, discuss their implementation on top of the YAP-Prolog system, and evaluate their performance in the context of large networks of biological entities.},
+archivePrefix = {arXiv},
+arxivId = {1006.4442},
+author = {Kimmig, Angelika and Demoen, Bart and Raedt, Luc De},
+doi = {10.1017/S1471068410000566},
+eprint = {1006.4442},
+issn = {1471-0684},
+journal = {Theory and Practice of Logic Programming},
+number = {Fuhr 2000},
+pages = {235--262},
+title = {{On the Implementation of the Probabilistic Logic Programming Language ProbLog}},
+url = {https://lirias.kuleuven.be/bitstream/123456789/259607/1/kimmig10.pdf},
+volume = {11},
+year = {2011}
+},
+
+@article{Raedt,
+author = {Raedt, Luc De and Kimmig, Angelika},
+title = {{Probabilistic ( Logic ) Programming Concepts}}
+},
+
+@article{McDermott1998,
+abstract = {This manual describes the syntax of PDDL, the Planning Domain Definition Language, the problem-specification language for the AIPS-98 planning competition. The language has roughly the the expressiveness of Pednault’s ADL [10] for propositions, and roughly the expressiveness of UMCP [6] for actions. Our hope is to encourage empirical evaluation of planner performance, and development of standard sets of problems all in comparable notations.},
+annote = {Percursor do RDDL. Background Knowledge.},
+author = {McDermott, D and Ghallab, M and Howe, a and C},
+doi = {TR-98-003/DCS TR-1165},
+file = {:E$\backslash$:/OneDrive/IST/Tese/Papers/pddl.pdf:pdf},
+journal = {The AIPS-98 Planning},
+mendeley-groups = {Languages,Languages/PDDL},
+title = {{PDDL-the planning domain definition language}},
+url = {http://www.citeulike.org/user/kira/article/4097279},
+year = {1998}
+}
+
+
+
+@article{Broeck2010,
+author = {Broeck, Guy Van Den and Thon, Ingo and Otterlo, Martijn Van and Raedt, Luc De},
+isbn = {9781577354659},
+journal = {Aaai},
+keywords = {Technical Papers -- Reasoning Under Uncertainty},
+mendeley-groups = {Solvers/Logic},
+number = {Sato},
+pages = {1217--1222},
+title = {{DTProbLog: A Decision-Theoretic Probabilistic Prolog.}},
+url = {http://www.aaai.org/ocs/index.php/AAAI/AAAI10/paper/download/1695/2181},
+year = {2010}
+},
+
+@book{Russell2009,
+abstract = {Artificial Intelligence: A Modern Approach, 3e offers the most comprehensive, up-to-date introduction to the theory and practice of artificial intelligence. Number one in its field, this textbook is ideal for one or two-semester, undergraduate or graduate-level courses in Artificial Intelligence. Dr. Peter Norvig, contributing Artificial Intelligence author and Professor Sebastian Thrun, a Pearson author are offering a free online course at Stanford University on artificial intelligence. According to an article in The New York Times , the course on artificial intelligence is “one of three being offered experimentally by the Stanford computer science department to extend technology knowledge and skills beyond this elite campus to the entire world.” One of the other two courses, an introduction to database software, is being taught by Pearson author Dr. Jennifer Widom. Artificial Intelligence: A Modern Approach, 3e is available to purchase as an eText for your Kindle™, NOOK™, and the iPhone®/iPad®. To learn more about the course on artificial intelligence, visit http://www.ai-class.com. To read the full New York Times article, click here.},
+author = {Russell, Stuart and Norvig, Peter},
+doi = {10.1017/S0269888900007724},
+isbn = {9780136042594},
+issn = {0269-8889},
+title = {{Artificial Intelligence: A Modern Approach}},
+year = {2009}
+}
+
+
+@article{Colmerauer1993,
+author = {Colmerauer, Alain and Roussel, Philippe},
+doi = {10.1145/155360.155362},
+isbn = {0201895021},
+issn = {03621340},
+journal = {ACM SIGPLAN Notices},
+mendeley-groups = {Solvers/Historic},
+number = {3},
+pages = {37--52},
+title = {{The birth of Prolog}},
+volume = {28},
+year = {1993}
+},
+
+@article{prolog,
+author = {Clocksin, William F. and Mellish, Christopher S.},
+isbn = {978-3-540-00678-7},
+journal = {New York: Springer-Verlag},
+pages = {1--46},
+title = {{Programming in Prolog}},
+year = {2003}
+},
+
+@article{Boutilier1999,
+abstract = {Planning under uncertainty is a central problem in the study of automated sequential decision making, and has been addressed by researchers in many different fields, including AI planning, decision analysis, operations research, control theory and economics. While the assumptions and perspectives adopted in these areas often differ in substantial ways, many planning problems of interest to researchers in these fields can be modeled as Markov decision processes (MDPs) and analyzed using the techniques of decision theory. This paper presents an overview and synthesis of MDP-related methods, showing how they provide a unifying framework for modeling many classes of planning problems studied in AI. It also describes structural properties of MDPs that, when exhibited by particular classes of problems, can be exploited in the construction of optimal or approximately optimal policies or plans. Planning problems commonly possess structure in the reward and value functions used to describe performance criteria, in the functions used to describe state transitions and observations, and in the relationships among features used to describe states, actions, rewards, and observations.},
+archivePrefix = {arXiv},
+arxivId = {1105.5460},
+author = {Boutilier, Craig and Dean, Thomas and Hanks, Steve},
+doi = {doi:10.1613/jair.575},
+eprint = {1105.5460},
+isbn = {90-5199-237-8},
+issn = {10769757},
+journal = {Journal of Artificial Intelligence Research},
+mendeley-groups = {Planning},
+pages = {1--94},
+title = {{Decision-Theoretic Planning: Structural Assumptions and Computational Leverage}},
+volume = {11},
+year = {1999}
+}

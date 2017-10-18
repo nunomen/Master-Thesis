@@ -1,0 +1,2 @@
+Head :- True.
+Head.
